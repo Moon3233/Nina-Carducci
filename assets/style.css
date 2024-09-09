@@ -493,11 +493,11 @@ input[type="submit"] {
     }
 
     .modal-nav.prev {
-        left: -5%;
+        left: -10%;
     }
 
     .modal-nav.next {
-        right: -5%;
+        right: -10%;
     }
 
     .about-me__title {
