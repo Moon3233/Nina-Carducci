@@ -7,22 +7,6 @@ body {
     font-style: normal;
 }
 
-.skip-to-content {
-    position: absolute; /* Le lien est placé en dehors du flux normal de la page */
-    top: -50px; /* Caché en dehors de l'écran */
-    left: 0;
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    z-index: 1001;
-    transition: top 0.3s ease;
-}
-
-.skip-to-content:focus {
-    top: 0.5rem; /* Afficher le lien lorsqu'il est focus (tabulé) */
-	color: #fff;
-	text-decoration: none;
-}
 
 .top-header {
     background-color: white;
