@@ -10,18 +10,18 @@ body {
 
 .skip-to-content {
     position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translate(-50%);
-    background: #000;
+    clip-path: inset(100%);
+    background-color: #000;
     color: #fff;
     padding: 8px;
     z-index: 10000;
-    transition: top 0.3s;
 }
 
 .skip-to-content:focus {
+    clip-path: none;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h6,
