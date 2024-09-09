@@ -6,10 +6,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <!-- Charger la feuille de style des polices de manière non bloquante avec onload -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet" onload="this.rel='stylesheet'">
-        <noscript>
-            <link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
-        </noscript>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
         <meta charset="UTF-8" />
 
         <title>Nina Carducci - Photographe</title>
@@ -368,8 +366,8 @@
             </div>
         </div>
 
-        <script src="./assets/carousel.min.js"></script>
-        <script src="./assets/gallery.min.js"></script>
-        <script src="./assets/modal.min.js"></script>
+        <script src="./assets/carousel.min.js" defer></script>
+        <script src="./assets/gallery.min.js" defer></script>
+        <script src="./assets/modal.min.js" defer></script>
     </body>
 </html>
