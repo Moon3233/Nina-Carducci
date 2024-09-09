@@ -2,7 +2,6 @@
 <html lang="fr">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/bootstrap/bootstrap.css" />
         <link rel="stylesheet" href="./assets/style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,11 +10,10 @@
             rel="stylesheet"
         />
         <meta charset="UTF-8" />
-        
-		<title>Nina Carducci - Photographe</title>
+
+        <title>Nina Carducci - Photographe</title>
     </head>
     <body>
-
         <header class="top-header">
             <h1 class="name">Nina Carducci</h1>
             <nav class="nav">
@@ -29,7 +27,9 @@
                             class="social-link"
                             href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
                             target="_blank"
-                            ><img src="assets/images/instagram.avif" alt="Logo Instagram"
+                            ><img
+                                src="assets/images/instagram.avif"
+                                alt="Logo Instagram"
                         /></a>
                     </li>
                 </ul>
@@ -94,29 +94,47 @@
                         data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="prev"
                     >
-                        <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Previous</span>
+                        <span aria-hidden="true">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 16 16"
+                                fill="#fff"
+                                width="30"
+                                height="30"
+                            >
+                                <path
+                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                                />
+                            </svg>
+                        </span>
                     </button>
+
+                    <!-- Bouton suivant avec icône SVG -->
                     <button
                         class="carousel-control-next"
                         type="button"
                         data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="next"
                     >
-                        <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Next</span>
+                        <span aria-hidden="true">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 16 16"
+                                fill="#fff"
+                                width="30"
+                                height="30"
+                            >
+                                <path
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 1 1-.708-.708L9.293 8 4.646 3.354a.5.5 0 0 1 0-.708z"
+                                />
+                            </svg>
+                        </span>
                     </button>
                 </div>
             </section>
             <section id="about">
                 <div class="picture left">
-                    <img 
+                    <img
                         src="./assets/images/nina.avif"
                         alt="Portrait de moi-même"
                     />
@@ -145,56 +163,75 @@
             </section>
             <section id="gallery">
                 <h2 class="title">Portfolio</h2>
-                <div class="container py-3">
-                    <div class="gallery" style="display: none">
+
+                <div class="filters" id="filters"></div>
+
+                <div class="gallery">
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Concert"
                             class="gallery-item"
                             src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.avif"
                             alt="Concert avec foule et musiciens"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Entreprises"
                             class="gallery-item"
                             src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.avif"
                             alt="Homme en costume"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Entreprises"
                             class="gallery-item"
                             src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.avif"
                             alt="Femme qui sourit à son travail"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Mariages"
                             class="gallery-item"
                             src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.avif"
                             alt="Mains enlacés"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Portrait"
                             class="gallery-item"
                             src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.avif"
                             alt="Portrait d'un homme"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Mariages"
                             class="gallery-item"
                             src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.avif"
                             alt="Jeune couple de mariés"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Portrait"
                             class="gallery-item"
                             src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.avif"
                             alt="Portrait d'une femme"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Concert"
                             class="gallery-item"
                             src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.avif"
                             alt="Chanteur lors d'un concert"
                         />
+                    </div>
+                    <div class="image-box">
                         <img
                             data-gallery-tag="Entreprises"
                             class="gallery-item"
@@ -203,6 +240,7 @@
                         />
                     </div>
                 </div>
+
                 <div class="quote">
                     <figure>
                         <blockquote>
@@ -316,7 +354,17 @@
             </section>
         </main>
 
-        <script src="./assets/bootstrap/bootstrap.bundle.js"></script>
-        <script src="./assets/maugallery.js"></script>
+        <!-- Modal structure -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span> <!-- Bouton de fermeture -->
+            <div class="modal-content">
+                <img class="modal-img" id="modalImage" src="" alt="">
+            </div>
+            <span class="modal-nav prev">&#10094;</span>
+            <span class="modal-nav next">&#10095;</span>
+        </div>
+
+        <script src="./assets/carousel.js"></script>
+        <script src="./assets/gallery.js"></script>
     </body>
 </html>

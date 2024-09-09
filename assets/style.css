@@ -5,8 +5,38 @@ body {
 * {
     font-family: "Inter";
     font-style: normal;
+    box-sizing: border-box;
 }
 
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%);
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 10000;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+p {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
 
 .top-header {
     background-color: white;
@@ -16,12 +46,13 @@ body {
     display: flex;
     justify-content: space-between;
     padding-inline: 100px;
-    padding-block: 30px;
+    padding-block: 1rem;
     align-items: center;
 }
 
 .top-header .name {
     font-size: 26px;
+    font-weight: normal;
 }
 
 .nav ul {
@@ -42,6 +73,71 @@ body {
 
 .social-link img {
     width: 20px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Style pour la transition des images du carousel */
+.carousel-inner {
+    display: flex;
+    transition: transform 1.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 1.5s ease-in-out;
+}
+
+.carousel-item img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    border: none;
+    background-color: transparent;
+}
+.carousel-control-prev {
+    left: 10%;
+}
+
+.carousel-control-next {
+    right: 10%;
+}
+
+
+/* Indicateurs du carousel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 5vh; /* Ajustez pour positionner la distance du bas du carousel */
+    left: 50%;
+    transform: translateX(-50%); /* Centrage horizontal */
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Espacement entre les boutons */
+    z-index: 2;
+}
+
+/* Style des boutons des indicateurs */
+.carousel-indicators button {
+    width: 2rem;
+    height: 0.35rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-indicators button.active {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 #about {
@@ -86,9 +182,19 @@ body {
     font-style: italic;
     width: 60%;
 }
+.about-me__introduction h3 {
+    font-size: 1rem;
+}
+
 #about-me p {
     width: 80%;
     font-size: 14px;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
@@ -97,42 +203,120 @@ body {
 }
 .gallery .nav {
     justify-content: center;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-    color: #fff;
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.filters button {
+    padding: 0.75rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+.filters button.selected {
     background-color: #beb45a;
-    border-radius: 0;
+    color: white;
 }
-.nav-pills .nav-link {
-    color: #000;
+
+.container-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
-.item-column {
-    position: relative;
-    margin-bottom: 0 !important;
-    padding: 0;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
+    grid-gap: 1rem;
+    width: 70%;
 }
-.item-column::after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
+
+.image-box {
+    width: 100%;
+    padding-top: 100%; /* Cela crée un carré car 100% de la largeur est appliqué à la hauteur */
+    position: relative; /* Nécessaire pour positionner l'image en absolu */
+    overflow: hidden;
 }
-.gallery-item {
+.image-box img {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    padding: 0.5em;
+    object-fit: cover; /* L'image remplira le carré sans être déformée */
 }
-.mg-prev,
-.mg-next {
-    width: 30px;
-    height: 30px;
-    border-radius: 00%;
-    justify-content: center;
-    align-items: center;
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content (image) */
+.modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 25%;
+    padding: 1rem;
+    border: 1px solid rgb(0 0 0 / 80%);
+    border-radius: 0.25rem;
+    background-color: white;
+}
+
+.modal-img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-nav.prev,
+.modal-nav.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    user-select: none;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1000;
+    transform: translateY(-50%);
     display: flex;
-    font-size: 24px;
+    align-items: center;
+}
+.modal-nav.prev {
+    left: -20%;
+}
+
+.modal-nav.next {
+    right: -20%;
+}
+
+.modal-nav.prev:hover,
+.modal-nav.next:hover {
+    background-color: rgba(255, 255, 255, 0.822);
+}
+.modal-nav svg {
+    fill: black;
 }
 
 .quote {
@@ -146,6 +330,7 @@ body {
     font-family: Spectral;
     font-style: italic;
     font-weight: 300;
+    font-size: calc(1.375rem + 1.5vw);
 }
 .quote__author {
     font-family: Spectral;
@@ -170,9 +355,10 @@ body {
 }
 
 #services .container {
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
     padding: 2em 0;
+    gap: 2rem;
 }
 
 .service {
@@ -244,6 +430,29 @@ input[type="submit"] {
     .picture {
         flex: 2;
     }
+
+    .gallery {
+        width: 85%;
+    }
+
+    .modal-content {
+        width: 45%;
+    }
+
+    .modal-nav.prev {
+        left: -20%;
+    }
+
+    .modal-nav.next {
+        right: -20%;
+    }
+
+    .container {
+        max-width: 960px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
     #about,
     #contact .container {
         align-items: center;
@@ -252,7 +461,7 @@ input[type="submit"] {
         margin-top: 0;
         margin-bottom: 1em;
     }
-    #about-me h6,
+    #about-me h3,
     #about-me p {
         width: 100%;
     }
@@ -274,12 +483,30 @@ input[type="submit"] {
         left: 0;
         z-index: -1;
     }
+
+    .gallery {
+        width: 90%;
+    }
+
+    .modal-content {
+        width: 75%;
+    }
+
+    .modal-nav.prev {
+        left: -5%;
+    }
+
+    .modal-nav.next {
+        right: -5%;
+    }
+
     .about-me__title {
         text-align: center;
         margin-top: 1em;
     }
     #services .container {
         flex-direction: column;
+        max-width: 720px;
     }
     .service {
         width: 100%;
@@ -331,6 +558,33 @@ input[type="submit"] {
         padding-block: 1em;
         text-align: center;
     }
+
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+        width: 95%;
+    }
+
+    .quote {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 75%;
+    }
+
+    .modal-nav.prev,
+    .modal-nav.next {
+        top: 120%;
+    }
+
+    .modal-nav.prev {
+        left: 10%;
+    }
+
+    .modal-nav.next {
+        right: 10%;
+    }
+
     .picture.left::before,
     .picture.right::before {
         height: 150px;
