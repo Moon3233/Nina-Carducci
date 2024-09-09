@@ -257,6 +257,7 @@ h1 {
     object-fit: cover; /* L'image remplira le carré sans être déformée */
 }
 
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */

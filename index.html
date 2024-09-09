@@ -8,10 +8,28 @@
         <!-- Charger la feuille de style des polices de manière non bloquante avec onload -->
         <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap">
         <link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
+
         <meta charset="UTF-8" />
-        <meta name="description" content="Découvrez Nina Carducci, photographe professionnelle. Réservez pour un shooting photo, des retouches ou un album photos.">
+        <meta name="description" content="Découvrez Nina Carducci, photographe professionnelle à Bordeaux. Réservez pour des retouches, un album photos ou un shooting photo jusqu'en Île-de-France.">
 
         <title>Nina Carducci - Photographe</title>
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Nina Carducci",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "68 avenue Alsace-Lorraine",
+                    "addressLocality": "Bordeaux",
+                    "postalCode": "33200",
+                    "addressCountry": "FR"
+                },
+                "telephone": "05 56 67 78 89",
+                "openingHours": "Mo-Fr 10:00-19:00",
+            }
+            </script>
     </head>
     <body>
 
@@ -325,7 +343,7 @@
                     </figcaption>
                 </figure>
             </div>
-            <section id="contact">
+            <footer id="contact">
                 <div class="container">
                     <div class="form-container">
                         <h3>Une question ? Une demande de devis ?</h3>
@@ -355,7 +373,9 @@
                         />
                     </div>
                 </div>
-            </section>
+            </footer>
+
+
         </main>
 
         <!-- Modal structure -->
@@ -366,6 +386,8 @@
                 <span class="modal-nav next">&#10095;</span>
             </div>
         </div>
+
+
 
         <script src="./assets/carousel.min.js" defer></script>
         <script src="./assets/gallery.min.js" defer></script>
