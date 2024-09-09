@@ -1,0 +1,21 @@
+{
+  "name": "nina-carducci-dev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "minify-carousel": "terser assets/carousel.js --compress --mangle --output assets/carousel.min.js",
+    "minify-gallery": "terser assets/gallery.js --compress --mangle --output assets/gallery.min.js",
+    "minify-modal": "terser assets/modal.js --compress --mangle --output assets/modal.min.js",
+    "minify-css": "postcss assets/style.css -o assets/style.min.css",
+    "minify-all": "npm run minify-carousel && npm run minify-gallery && npm run minify-modal && npm run minify-css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cssnano": "^7.0.6",
+    "postcss-cli": "^11.0.0",
+    "terser": "^5.32.0"
+  }
+}
