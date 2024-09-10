@@ -105,7 +105,12 @@ h1 {
     transform: translateX(-50%);
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
 }
+
+
 .carousel-control-prev {
     left: 10%;
 }
