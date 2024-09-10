@@ -53,7 +53,7 @@
 
         <header class="top-header">
             <h1 class="name">Nina Carducci</h1>
-            <nav class="nav">
+            <nav class="nav" role="navigation">
                 <ul>
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#gallery">Galerie</a></li>
@@ -130,6 +130,7 @@
                         type="button"
                         data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="prev"
+                        aria-label="Précédent"
                     >
                         <span class="carousel-control-prev-icon" aria-hidden="true">
                             &#10094;
@@ -141,6 +142,7 @@
                         type="button"
                         data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="next"
+                        aria-label="Suivant"
                     >
                         <span class="carousel-control-next-icon" aria-hidden="true">
                             &#10095;
@@ -373,13 +375,22 @@
         </main>
 
         <!-- Modal structure -->
-        <div id="imageModal" class="modal">
+        <div id="imageModal" class="modal" role="dialog">
             <div class="modal-content">
-                <img class="modal-img" id="modalImage" src="" alt="">
-                <span class="modal-nav prev">&#10094;</span>
-                <span class="modal-nav next">&#10095;</span>
+                <img class="modal-img" id="modalImage" src="" alt="Image agrandie dans la modale">
+                
+                <!-- Bouton précédent avec aria-label -->
+                <button class="modal-nav prev" aria-label="Image précédente">
+                    <span aria-hidden="true">&#10094;</span>
+                </button>
+                
+                <!-- Bouton suivant avec aria-label -->
+                <button class="modal-nav next" aria-label="Image suivante">
+                    <span aria-hidden="true">&#10095;</span>
+                </button>
             </div>
         </div>
+        
 
 
 
