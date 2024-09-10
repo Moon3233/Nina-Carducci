@@ -293,6 +293,7 @@ h1 {
     transform: translateY(-50%);
     display: flex;
     align-items: center;
+    border: none;
 }
 .modal-nav.prev {
     left: -20%;
