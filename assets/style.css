@@ -8,25 +8,6 @@ body {
     box-sizing: border-box;
 }
 
-.skip-to-content {
-    position: fixed;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    padding: 8px;
-    z-index: 10000;
-    transition: top 0.3s ease;
-    clip-path: inset(100%);
-    text-decoration: none;
-}
-
-.skip-to-content:focus {
-    top: 10px;
-    clip-path: none;
-}
-
 h6,
 h5,
 h4,
@@ -468,6 +449,9 @@ input[type="submit"] {
     .about-me__title {
         margin-top: 0;
         margin-bottom: 1em;
+    }
+    #about-me h3 {
+        font-size: 1rem;
     }
     #about-me h3,
     #about-me p {
