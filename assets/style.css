@@ -88,11 +88,11 @@ h1 {
     top: 50%;
     transform: translateX(-50%);
     border: none;
-    background-color: transparent;
+    background-color: #f1ebeba3;
     cursor: pointer;
     color: white;
     font-size: 2rem;
-    color: orange;
+    color: black;
 }
 
 
