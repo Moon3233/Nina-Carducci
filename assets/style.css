@@ -9,19 +9,22 @@ body {
 }
 
 .skip-to-content {
-    position: absolute;
-    clip-path: inset(100%);
+    position: fixed;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #000;
     color: #fff;
     padding: 8px;
     z-index: 10000;
+    transition: top 0.3s ease;
+    clip-path: inset(100%);
+    text-decoration: none;
 }
 
 .skip-to-content:focus {
+    top: 10px;
     clip-path: none;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 h6,
